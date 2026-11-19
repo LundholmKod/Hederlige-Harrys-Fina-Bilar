@@ -1,7 +1,5 @@
 <!-- Startsidan med plats för fem klickbara bilannonser.
      js/index.js skapar annonserna och länkar dem till rätt bil i cars.html. -->
-    <!-- Startsidan med plats för fem klickbara bilannonser.
-     js/index.js skapar annonserna och länkar dem till rätt bil i cars.html. -->
 <!DOCTYPE html>
 <html lang="sv">
 
@@ -38,9 +36,6 @@
                          Kvalitetsbilar till bra priser.
                     </p>
 
-                    <a href="#cars" class="btn btn-primary">
-                         Se våra bilar
-                    </a>
                </section>
           </section>
 
@@ -57,19 +52,22 @@
 
                </section>
 
+               <nav aria-label="Sidnavigering" class="d-flex justify-content-center">
+                    <button id="page-1" class="page-number">
+                         1
+                    </button>
+
+                    <button id="page-2" class="page-number">
+                         2
+                    </button>
+               </nav>
+
           </section>
-
-
-
 
      </main>
 
-
-     <!-- Footer laddas in av JavaScript -->
      <section id="footer-container"></section>
 
-
-     <!-- JavaScript -->
      <script src="js/components.js"></script>
      <script src="js/cars-data.js"></script>
      <script src="js/index.js"></script>
@@ -77,3 +75,4 @@
 </body>
 
 </html>
+    
