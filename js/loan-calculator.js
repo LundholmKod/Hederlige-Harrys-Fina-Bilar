@@ -1,6 +1,7 @@
 // Beräknar lånekostnaden med bilens pris som lånebelopp och 15 % ränta.
 // Besökaren kan ändra antalet år. Pris och ränta är skrivskyddade.
 
+function calculateLoan(carPrice) {
 // Skapar en sektion för kalkylatorn.
 const calculator = document.createElement("section");
 
@@ -9,7 +10,7 @@ calculator.innerHTML = `
   <h2>Lånekalkylator</h2>
   <div>
     <label for="loan-amount">Lånebelopp (kr)</label>
-    <input id="loan-amount" type="number" value="129000" readonly>
+    <input id="loan-amount" type="number" value="${carPrice}" readonly>
 </div>
 
 <div>
@@ -34,7 +35,7 @@ const yearsInput = document.getElementById("loan-years");
 const result = document.getElementById("loan-result");
 
   // Kör funktionen varje gång besökaren ändrar antalet år.
-yearsInput.addEventListener("input", function (){
+function calculateMonthlyPayment () {
   // Läser fältens värden som tal inför uträkningen.
   const amount = amountInput.valueAsNumber;
   const interest = interestInput.valueAsNumber;
@@ -59,4 +60,7 @@ if (!Number.isInteger(years) || years < 1) {
   const interestFactor = (1 + monthlyInterest) ** months;
   const monthlyPayment = amount * monthlyInterest * interestFactor / (interestFactor - 1);
   result.textContent = "Månadskostnad: " + monthlyPayment.toFixed(2) + " kr";
-})
+}
+
+yearsInput.addEventListener("input", calculateMonthlyPayment);
+calculateMonthlyPayment(); }
