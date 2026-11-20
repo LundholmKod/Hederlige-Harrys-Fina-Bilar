@@ -1,2 +1,23 @@
-/* Gruppens egna stilar för båda sidorna, till exempel färger,
-   avstånd och anpassningar av Bootstrap. */
+
+:root {
+    --primary-green: #97c653;
+    --dark-green: #527b28;
+    --light-green: #f0f7e8;
+    --accent-blue: #62b5e9;
+    --background: #f8faf7;
+    --white: #ffffff;
+    --text-dark: #263238;
+    --text-muted: #64716b;
+}
+
+body {
+    margin: 100;
+    background-color: var(--background);
+    color: var(--text-dark);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+font-weight: 700;
+}
