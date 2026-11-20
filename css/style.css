@@ -1,4 +1,5 @@
-
+/* Gruppens egna stilar för båda sidorna, till exempel färger,
+   avstånd och anpassningar av Bootstrap. */
 :root {
     --primary-green: #97c653;
     --dark-green: #527b28;
@@ -11,7 +12,7 @@
 }
 
 body {
-    margin: 100;
+    margin: 0;
     background-color: var(--background);
     color: var(--text-dark);
     font-family: "Segoe UI", Arial, sans-serif;
@@ -21,3 +22,34 @@ body {
 h1, h2, h3 {
 font-weight: 700;
 }
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        #eaf5dc 0%,
+        #f8fcf3 65%,
+        #e8f5fc 100%
+    );
+    padding: 100px 20px;
+    text-align: center;
+    border-bottom: 4px solid var(--primary-green);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: var(--dark-green);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
