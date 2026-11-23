@@ -1,2 +1,89 @@
-<!-- Gemensam detaljsida för alla bilar.
-     Här visas den valda bilens uppgifter och formuläret för lånekalkylatorn. -->
+<!-- Bilsidan visar information om den bil besökaren har valt.
+     JavaScript ska senare hämta rätt bil från den gemensamma listan.
+     Lånekalkylatorn ska visas under bilinformationen. -->
+
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <!-- Gör att svenska tecken visas korrekt -->
+    <meta charset="UTF-8">
+
+    <!-- Anpassar sidan efter skärmens storlek -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Sidans titel i webbläsaren -->
+    <title>Bilsida | Hederlige Harrys</title>
+
+    <!-- Bootstrap för layout och responsiv design -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Gruppens gemensamma CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+
+    <!-- Navigation laddas in av JavaScript -->
+    <header id="nav-container"></header>
+
+    <!-- Huvudinnehållet på bilsidan -->
+    <main class="container">
+
+        <!-- Länk tillbaka till startsidan -->
+        <a href="index.html">← Tillbaka till alla bilar</a>
+
+        <!-- Bootstrap-rad med bilbild och bilinformation.
+             På större skärmar visas de bredvid varandra.
+             På mindre skärmar visas de under varandra. -->
+        <section class="row mt-4 g-4">
+
+            <!-- Vänster kolumn: bilens bild -->
+            <section class="col-md-6">
+
+                <!-- Tillfällig bild som senare byts av JavaScript -->
+                <img src="images/VolvoXC90.jpg"
+                     alt="Volvo XC90"
+                     class="img-fluid">
+
+            </section>
+
+            <!-- Höger kolumn: information om bilen -->
+            <section class="col-md-6">
+
+                <!-- Bilens namn hämtas senare med JavaScript -->
+                <h1 id="car-name" class="fw-bold mb-3"></h1>
+
+                <!-- Bilens årsmodell -->
+                <p id="car-year"></p>
+
+                <!-- Bilens pris -->
+                <p id="car-price" class="fs-3 fw-bold"></p>
+
+            </section>
+
+        </section>
+
+        <!-- Plats för lånekalkylator.
+             JavaScript behöver senare kopplas till denna sektion. -->
+        <section id="loan-calculator" class="mt-5">
+        </section>
+
+    </main>
+
+    <!-- Footer laddas in av JavaScript -->
+    <section id="footer-container"></section>
+
+    <!-- Laddar in gruppens gemensamma navigation och footer -->
+    <script src="js/components.js"></script>
+
+    <!-- Gemensam lista med alla tio bilar -->
+    <script src="js/cars-data.js"></script>
+
+    <!-- JavaScript som senare ska visa rätt bilinformation -->
+    <script src="js/car-details.js"></script>
+
+</body>
+</html>
