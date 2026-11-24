@@ -48,3 +48,40 @@ font-weight: 700;
     font-size: 2.2rem;
     margin-bottom: 40px !important;
 }
+
+
+#car-list .card {
+    height: 100%;
+    background: var(--white);
+    border: 1px solid #e2eadb;
+    border-radius: 16px;
+    overflow: hidden;
+     box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+
+#car-list .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+#car-list .card-img-top {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+#car-list .card-body {
+    padding: 24px;
+}
+
+#car-list .card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+#car-list .card-text {
+    color: var(--text-muted);
+}
