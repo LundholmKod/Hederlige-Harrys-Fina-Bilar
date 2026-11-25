@@ -68,9 +68,26 @@
 
         <!-- Plats för lånekalkylator.
              JavaScript behöver senare kopplas till denna sektion. -->
-        <section id="loan-calculator" class="mt-5">
-        </section>
+    <section id="loan-calculator" class="mt-5">
+         <h2>Lånekalkylator</h2>
 
+         <p>
+        <label for="loan-amount">Lånebelopp (kr)</label>
+        <input id="loan-amount" type="number" readonly>
+         </p>
+
+         <p>
+        <label for="loan-interest">Ränta (%)</label>
+        <input id="loan-interest" type="number" value="15" readonly>
+        </p>
+
+    <p>
+        <label for="loan-years">Antal år</label>
+        <input id="loan-years" type="number" min="1" value="5">
+    </p>
+
+    <p id="loan-result"></p>
+</section>
     </main>
 
     <!-- Footer laddas in av JavaScript -->
@@ -82,6 +99,9 @@
     <!-- Gemensam lista med alla tio bilar -->
     <script src="js/cars-data.js"></script>
 
+    <!-- Laddar in JavaScript för lånekalkylatorn -->
+    <script src="js/loan-calculator.js"></script>
+    
     <!-- JavaScript som senare ska visa rätt bilinformation -->
     <script src="js/car-details.js"></script>
 
