@@ -29,22 +29,14 @@ font-weight: 700;
     margin: 0;
 }
 
-#cars {
-    padding-top: 70px ;
-    padding-bottom: 90px ;
-}
-
-
 #cars h2 {
     font-size: 2.2rem;
     margin-bottom: 40px ;
 }
 
-
 #car-list .card {
-    height: 100%;
     background: var(--white);
-    border: 1px solid #e2eadb;
+    border: 2px solid var(--accent-blue);
     border-radius: 16px;
     overflow: hidden;
      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
@@ -76,3 +68,27 @@ font-weight: 700;
 #car-list .card-text {
     color: var(--text-muted);
 }
+
+#cars nav[aria-label="Sidnavigering"] {
+    gap: 12px;
+    margin-top: 45px;
+}
+
+.page-number {
+    background: white;
+    color: var(--accent-blue);
+    border: 2px solid var(--accent-blue);
+    border-radius: 10px;
+    min-width: 45px;
+    height: 45px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.page-number:hover {
+    background: var(--accent-blue);
+    color: white;
+    border-color: var(--accent-blue);
+}
+
