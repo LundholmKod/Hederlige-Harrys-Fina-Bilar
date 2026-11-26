@@ -1,34 +1,78 @@
-// Visar fem bilannonser på startsidan med data från cars-data.js.
-// Varje annons länkar till cars.html med bilens ID, till exempel cars.html?id=1.
+const carList = document.querySelector("#car-list");
 
+const page1 = document.querySelector("#page-1");
+const page2 = document.querySelector("#page-2");
 
+const carsPerPage = 5;
+let currentPage = 1;
 
-/* TILLFÄLLIG TESTKOD – endast för att testa CSS */
+function showCars() {
 
-const Cars = [
-    { name: "Audi A4", price: "189 000 kr", image: "images/AudiA4.png" },
-    { name: "BMW 3-serie", price: "229 000 kr", image: "images/Bmw3serie.webp" },
-    { name: "Mercedes E-klass", price: "259 000 kr", image: "images/MercedesE-klass.jpg" },
-    { name: "Porsche 911", price: "899 000 kr", image: "images/Porsche911.jpg" },
-    { name: "Volvo XC90", price: "349 000 kr", image: "images/VolvoXC90.jpg" }
-];
+    carList.innerHTML = "";
 
-const carList = document.getElementById("car-list");
+    const start = (currentPage - 1) * carsPerPage;
+    const end = start + carsPerPage;
 
-Cars.forEach(car => {
-    const column = document.createElement("div");
-    column.className = "col-md-4";
+    const carsToShow = cars.slice(start, end);
 
-    column.innerHTML = `
-        <Section class="card">
-            <img src="${car.image}" class="card-img-top" alt="${car.name}">
-            <section class="card-body">
-                <h3 class="card-title">${car.name}</h3>
-                <p class="card-text">Pris: ${car.price}</p>
-                <a href="#" class="btn btn-primary">Visa bil</a>
-            </section>
-        </section>
-    `;
+    carsToShow.forEach(function (car) {
 
-    carList.appendChild(column);
+        const article = document.createElement("article");
+        article.classList.add("col-md-4");
+
+        article.innerHTML = `
+            <a href="cars.html?id=${car.id}" class="card h-100 text-decoration-none">
+
+                <img 
+                    src="${car.imageUrl}" 
+                    class="card-img-top" 
+                    alt="${car.type}"
+                >
+
+                <section class="card-body">
+
+                    <h2 class="card-title">
+                        ${car.type}
+                    </h2>
+
+                    <p class="card-text">
+                        Årsmodell: ${car.year}
+                    </p>
+
+                    <p class="card-text">
+                        Pris: ${car.price} kr
+                    </p>
+
+                </section>
+            </a>
+        `;
+
+        carList.appendChild(article);
+    });
+
+    updatePageButtons();
+}
+
+function updatePageButtons() {
+
+    page1.classList.remove("active");
+    page2.classList.remove("active");
+
+    if (currentPage === 1) {
+        page1.classList.add("active");
+    } else {
+        page2.classList.add("active");
+    }
+}
+
+page1.addEventListener("click", function () {
+    currentPage = 1;
+    showCars();
 });
+
+page2.addEventListener("click", function () {
+    currentPage = 2;
+    showCars();
+});
+
+showCars();
