@@ -1,2 +1,128 @@
-/* Gruppens egna stilar för båda sidorna, till exempel färger,
-   avstånd och anpassningar av Bootstrap. */
+:root {
+    --primary-green: #97c653;
+    --dark-green: #527b28;
+    --light-green: #f0f7e8;
+    --accent-blue: #62b5e9;
+    --background: #f8faf7;
+    --white: #ffffff;
+    --text-dark: #263238;
+    --text-muted: #64716b;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--text-dark);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+font-weight: 700;
+}
+
+.hero {
+    background-color: var(--background);
+    padding: 10px 0 30px;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+#cars h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px ;
+}
+
+#car-list .card {
+    background: var(--white);
+    border: 2px solid var(--accent-blue);
+    border-radius: 16px;
+    overflow: hidden;
+     box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+
+#car-list .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+#car-list .card-img-top {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+#car-list .card-body {
+    padding: 24px;
+}
+
+#car-list .card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+#car-list .card-text {
+    color: var(--text-muted);
+}
+
+#cars nav[aria-label="Sidnavigering"] {
+    gap: 12px;
+    margin-top: 45px;
+}
+
+.page-number {
+    background: white;
+    color: var(--accent-blue);
+    border: 2px solid var(--accent-blue);
+    border-radius: 10px;
+    min-width: 45px;
+    height: 45px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.page-number:hover {
+    background: var(--accent-blue);
+    color: white;
+    border-color: var(--accent-blue);
+}
+
+@media (min-width: 768px) {
+    main:has(#loan-calculator) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+
+    main:has(#loan-calculator) > a {
+        grid-column: 1 / -1;
+    }
+
+    main:has(#loan-calculator) > .row {
+        margin-top: 0 ;
+    }
+
+    main:has(#loan-calculator) .col-md-6 {
+        width: 100%;
+    }
+
+    #loan-calculator {
+        margin-top: 0 ;
+    }
+}

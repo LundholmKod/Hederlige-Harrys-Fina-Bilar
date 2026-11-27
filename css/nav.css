@@ -1,0 +1,30 @@
+
+#nav-container {
+    background-color: #1f1f1f;
+    padding: 0;
+}
+
+.navbar {
+    padding: 30px 0;
+}
+
+.navbar .logo {
+    width: 200px;
+    height: auto;
+}
+
+.navbar .nav-link {
+    color: #8fbd4f;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+.navbar-nav {
+    gap: 25px;
+}
+
+
+.navbar .nav-link:hover {
+    color: #ffffff;
+}
