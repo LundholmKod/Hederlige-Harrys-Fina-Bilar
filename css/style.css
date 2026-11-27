@@ -1,3 +1,14 @@
+:root {
+    --primary-green: #97c653;
+    --dark-green: #527b28;
+    --light-green: #f0f7e8;
+    --accent-blue: #62b5e9;
+    --background: #f8faf7;
+    --white: #ffffff;
+    --text-dark: #263238;
+    --text-muted: #64716b;
+}
+
 body {
     margin: 0;
     background-color: var(--background);
@@ -92,3 +103,26 @@ font-weight: 700;
     border-color: var(--accent-blue);
 }
 
+@media (min-width: 768px) {
+    main:has(#loan-calculator) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+
+    main:has(#loan-calculator) > a {
+        grid-column: 1 / -1;
+    }
+
+    main:has(#loan-calculator) > .row {
+        margin-top: 0 ;
+    }
+
+    main:has(#loan-calculator) .col-md-6 {
+        width: 100%;
+    }
+
+    #loan-calculator {
+        margin-top: 0 ;
+    }
+}
