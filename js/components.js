@@ -1,11 +1,15 @@
-fetch("components/footer.html")
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("footer-container").innerHTML = data;
-    });
-    
 fetch("components/nav.html")
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("nav-container").innerHTML = data;
+    .then(function (response) {
+        return response.text();
+    })
+    .then(function (html) {
+        document.querySelector("#nav-container").innerHTML = html;
+    });
+
+fetch("components/footer.html")
+    .then(function (response) {
+        return response.text();
+    })
+    .then(function (html) {
+        document.querySelector("#footer-container").innerHTML = html;
     });

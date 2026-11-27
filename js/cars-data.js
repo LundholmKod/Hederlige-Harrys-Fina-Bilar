@@ -5,7 +5,7 @@ const cars = [
   {
     id: 1,
     imageUrl: "images/MercedesG-klass.jpg",
-    type: "Mercedes G-klass",
+    type: "Mercedes GLS",
     year: 2022,
     price: 899000
     },
